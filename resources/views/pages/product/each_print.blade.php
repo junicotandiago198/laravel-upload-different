@@ -147,35 +147,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-xs-4 from">
-                        <p class="lead marginbottom">From : Dynofy</p>
-                        <p>350 Rhode Island Street</p>
-                        <p>Suite 240, San Francisco</p>
-                        <p>California, 94103</p>
-                        <p>Phone: 415-767-3600</p>
-                        <p>Email: contact@dynofy.com</p>
+                        <p class="lead marginbottom">Name : {{ $product->name }}</p>
                     </div>
 
                     <div class="col-xs-4 to">
-                        <p class="lead marginbottom">To : John Doe</p>
-                        <p>425 Market Street</p>
-                        <p>Suite 2200, San Francisco</p>
-                        <p>California, 94105</p>
-                        <p>Phone: 415-676-3600</p>
-                        <p>Email: john@doe.com</p>
-
+                        <p class="lead marginbottom">Vendor Image : {{ $product->vendor_image }}</p>
                     </div>
 
                     <div class="col-xs-4 text-right payment-details">
-                        <p class="lead marginbottom payment-info">Payment details</p>
-                        <p>Date: 14 April 2014</p>
-                        <p>VAT: DK888-777 </p>
-                        <p>Total Amount: $1019</p>
-                        <p>Account Name: Flatter</p>
+                        <p class="lead marginbottom payment-info"></p>
+                        <p>User Image : {{ $product->user_image }} </p>
                     </div>
 
                 </div>
 
-                <div class="row table-row">
+                {{-- <div class="row table-row">
                     <table class="table table-striped">
                     <thead>
                         <tr>
@@ -218,21 +204,21 @@
                     </tbody>
                     </table>
 
-                </div>
+                </div> --}}
 
                 <div class="row">
                 <div class="col-xs-6 margintop">
                     <p class="lead marginbottom">THANK YOU!</p>
 
-                    <button class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
-                    <button class="btn btn-danger"><i class="fa fa-envelope-o"></i> Mail Invoice</button>
+                    {{-- <button class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
+                    <button class="btn btn-danger"><i class="fa fa-envelope-o"></i> Mail Invoice</button> --}}
                 </div>
-                <div class="col-xs-6 text-right pull-right invoice-total">
+                {{-- <div class="col-xs-6 text-right pull-right invoice-total">
                         <p>Subtotal : $1019</p>
                         <p>Discount (10%) : $101 </p>
                         <p>VAT (8%) : $73 </p>
                         <p>Total : $991 </p>
-                </div>
+                </div> --}}
                 </div>
 
             </div>
