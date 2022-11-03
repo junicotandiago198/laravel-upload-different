@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Product;
+use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -17,6 +18,20 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+        if(request()->ajax()){
+            $query = Product::query();
+            
+            return Datatables::of($query)
+                ->addColumn('action', function($item) {
+                    return '
+                            <a class="btn btn-info" href="' . route('products.each_print', $item->id) . '">
+                                Print
+                            </a>
+                    ';
+                })
+                ->rawColumns(['action'])
+                ->make();
+        }
         return view('pages.product.index', [
             'products' => $products
         ]);
