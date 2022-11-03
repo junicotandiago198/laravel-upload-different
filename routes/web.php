@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/product', App\Http\Controllers\ProductController::class);
+Route::get('products/each_print/{product}', [ProductController::class, 'each_print'])->name('products.each_print'); 

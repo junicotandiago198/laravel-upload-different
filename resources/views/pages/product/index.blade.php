@@ -35,7 +35,7 @@
                                 <td>{{ $product->vendor_image }}</td>
                                 <td>{{ $product->user_image }}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary">Edit</a>
+                                    <a class="btn btn-info" href="{{ route('products.each_print',$product->id) }}">Print</a>
                                 </td>
                             </tr>
                         @endforeach

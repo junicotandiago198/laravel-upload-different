@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductController extends Controller
 {
@@ -110,5 +111,11 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function each_print(Product $product)
+    {
+        $pdf = PDF::loadView('pages.product.each_print', ['product' => $product]);
+        return $pdf->stream('each_print.pdf');
     }
 }
